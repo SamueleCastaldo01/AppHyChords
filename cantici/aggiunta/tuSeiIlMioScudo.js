@@ -123,11 +123,36 @@ export default function TuSeiIlMioScudo ({ a, b, c, d, e, f, g, cDiesis, eBemoll
 
         <View style={globalStyles.SpazioCantico}></View>
 
+        {accordiStru != "Testo" &&
         <View style={globalStyles.righeCantico}>
             <Text style={globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>2 Parte...</Text></Text>
         </View>
+        }
 
+        {accordiStru == "Testo" &&
+        <>
+        <View style={globalStyles.righeCantico}>
+            <Text style={globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>2.</Text>Anche se afflitto son Tu sarai con me,</Text>
+        </View>
+        <View style={globalStyles.righeCantico}>
+            <Text style={globalStyles.textCanticoNo}> non temerò,</Text>
+        </View>
+        <View style={globalStyles.righeCantico}>
+            <Text style={globalStyles.textCanticoNo}>Anche se il mio cuor intimorito è</Text>
+        </View>
+        <View style={globalStyles.righeCantico}>
+            <Text style={globalStyles.textCanticoNo}>Confiderò in Te Non temerò nessun uomo</Text>
+        </View>
+        <View style={globalStyles.righeCantico}>
+            <Text style={globalStyles.textCanticoNo}>Che si alzi contro me Tu sei il mio Dio,</Text>
+        </View>
+        <View style={globalStyles.righeCantico}>
+            <Text style={globalStyles.textCanticoNo}>la mia fortezza, La mia salvezza è in Te.</Text>
+        </View>
+        </>
+        }
 
+        <View style={globalStyles.SpazioCantico}></View>
 
         <View style={globalStyles.righeCantico}>
             <Text style={globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>Coro...</Text></Text>

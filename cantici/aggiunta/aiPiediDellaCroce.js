@@ -11,7 +11,7 @@ export default function AiPiediDellaCroce ({ a, b, c, d, e, f, g, cDiesis, eBemo
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Ai p</Text>
                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>iedi della croce io sta</Text>
-                  {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}</Text></View> }
+                  {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}/{cDiesis}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>rò</Text>
         </View>
 
@@ -19,7 +19,7 @@ export default function AiPiediDellaCroce ({ a, b, c, d, e, f, g, cDiesis, eBemo
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}> Contemp</Text>
             {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{b}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>lando la gran</Text>
-            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View> }
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}></Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>dezza </Text>
         </View>
 
@@ -33,7 +33,7 @@ export default function AiPiediDellaCroce ({ a, b, c, d, e, f, g, cDiesis, eBemo
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Pros</Text>
                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>trandomi ai tuoi piedi adore</Text>
-                  {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}</Text></View> }
+                  {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}/{cDiesis}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>rò</Text>
         </View>
 
@@ -41,7 +41,7 @@ export default function AiPiediDellaCroce ({ a, b, c, d, e, f, g, cDiesis, eBemo
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Rice</Text>
                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{b}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>vendo la Tua gr</Text>
-                  {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View> }
+                  {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}></Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>azia nel mio c</Text>
                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>uore</Text>
@@ -59,7 +59,7 @@ export default function AiPiediDellaCroce ({ a, b, c, d, e, f, g, cDiesis, eBemo
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ne</Text>
-                  {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View> }
+                  {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}></Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>l tuo s</Text>
                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>angue, Che in quel</Text>
@@ -71,7 +71,7 @@ export default function AiPiediDellaCroce ({ a, b, c, d, e, f, g, cDiesis, eBemo
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}> i miei pe</Text>
                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{b}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ccati hai perdo</Text>
-                  {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View> }
+                  {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}></Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>nato,</Text>
         </View>
 
@@ -86,8 +86,10 @@ export default function AiPiediDellaCroce ({ a, b, c, d, e, f, g, cDiesis, eBemo
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>Coro: </Text></Text>
                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}     {d}</Text></View> }
-            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Gesù! Nome al d</Text>
-                  {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{fDiesis}</Text></View> }
+            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Gesù! N</Text>
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}/{cDiesis}</Text></View> }
+            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ome al d</Text>
+                  {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}></Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>i so</Text>
                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{b}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>pra</Text>
@@ -104,8 +106,10 @@ export default function AiPiediDellaCroce ({ a, b, c, d, e, f, g, cDiesis, eBemo
                         {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>on c</Text>
                         {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View> }
-            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>’è, non c’è ness</Text>
-                        {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{fDiesis}-</Text></View> }
+            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>’è, non c</Text>
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}/{cDiesis}</Text></View> }
+            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>’è ness</Text>
+                        {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}></Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>un al</Text>
                         {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{b}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>tro</Text>
@@ -139,7 +143,7 @@ export default function AiPiediDellaCroce ({ a, b, c, d, e, f, g, cDiesis, eBemo
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>e saremo con </Text>
                         {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Lui per L'eterni</Text>
-                        {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}</Text></View> }
+                        {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>tà!</Text>
         </View>
 

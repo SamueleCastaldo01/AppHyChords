@@ -57,9 +57,31 @@ export default function UnitiNelSuoAmor ({ a, b, c, d, e, f, g, cDiesis, eBemoll
 
         <View style={globalStyles.SpazioCantico}></View>
 
+        {accordiStru!="Testo" &&
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>2 Parte..</Text></Text>
         </View>
+        }
+
+        {accordiStru=="Testo" &&
+        <>
+        <View style={globalStyles.righeCantico}>
+            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>2.</Text>Eravamo insensati pien d’orgoglio e vanità,</Text>
+        </View>
+        <View style={globalStyles.righeCantico}>
+            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ma Gesù ci ha dato</Text>
+        </View>
+        <View style={globalStyles.righeCantico}>
+            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>col suo amore piena libertà,</Text>
+        </View>
+        <View style={globalStyles.righeCantico}>
+            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>nonostante le diversità che</Text>
+        </View>
+        <View style={globalStyles.righeCantico}>
+            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>sono dentro noi, Lui ci</Text>
+        </View>
+        </>
+        }
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ha fatti diventare un solo </Text>

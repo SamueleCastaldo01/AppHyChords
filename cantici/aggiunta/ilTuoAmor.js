@@ -43,6 +43,7 @@ export default function IlTuoAmor ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fDi
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>e tue compass</Text>
                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ioni, </Text>
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>     {c}</Text></View> }
     </View>
 
     <View style={globalStyles.righeCantico}>
@@ -67,7 +68,7 @@ export default function IlTuoAmor ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fDi
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>or gran</Text>
                       {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>de, gran</Text>
-                      {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}/{a}-</Text></View> }
+                      {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c} {a}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>de</Text>
     </View>
     
@@ -81,9 +82,9 @@ export default function IlTuoAmor ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fDi
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Il Tuo A</Text>
                       {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>mor grand</Text>
-                      {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View> }
-            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>e, gran</Text>
                       {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}-</Text></View> }
+            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>e, gran</Text>
+                      {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}  {a}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>de, gran</Text>
                       {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>de!</Text>

@@ -73,7 +73,7 @@ export default function ApriIMieiOcchi ({ a, b, c, d, e, f, g, cDiesis, eBemolle
 
     <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}> </Text>
-              {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}7</Text></View> }
+              {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}7+</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Nel Tuo grande immenso A</Text>
               {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>mor,</Text>

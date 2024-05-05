@@ -6,10 +6,17 @@
     "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "plugins": [
+      "@config-plugins/react-native-blob-util",
+      "@config-plugins/react-native-pdf"
+    ],
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#FFFFFF"
+      "backgroundColor": "#04457E",
+      "imageResizeMode": "contain",
+      "shouldResize": true,
+      "durationMillis": 1000 
     },
     "assetBundlePatterns": [
       "**/*"
@@ -19,7 +26,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
       },
       "softwareKeyboardLayoutMode": "pan",
@@ -33,5 +40,8 @@
         "projectId": "0f1ef13f-7a33-4984-b146-01c14b0145cd"
       }
     }
+  },
+  "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-8550341729584646~9099264855"
   }
 }

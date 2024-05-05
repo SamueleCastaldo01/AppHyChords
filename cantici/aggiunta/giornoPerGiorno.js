@@ -41,23 +41,23 @@ export default function GiornoPerGiorno ({ a, b, c, d, e, f, g, cDiesis, eBemoll
 
     <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>P</Text>
-                 {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{f}7</Text></View> }
+                 {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{f}7+</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>roclamerò il Tuo </Text>
-                 {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}</Text></View> }
+                 {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}/{e}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>nome,</Text>
     </View>
 
     <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}> </Text>
-                 {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{f}7</Text></View> }
+                 {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{f}7+</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Proclamerò il Tuo </Text>
-                 {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}</Text></View> }
+                 {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}/{e}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>regno,</Text>
     </View>
 
     <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>e t</Text>
-            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}-/{g}/{c}</Text></View> }
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}- {g} {c}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>i loderò.</Text>
     </View>
 

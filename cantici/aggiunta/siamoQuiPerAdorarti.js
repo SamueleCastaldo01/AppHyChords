@@ -11,13 +11,13 @@ export default function SiamoQuiPerAdorarti ({ a, b, c, d, e, f, g, cDiesis, eBe
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}> </Text>
                       {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Siamo qui per ado</Text>
-                      {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}-/{a}</Text></View> }
+                      {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}- {a}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>rarti</Text>
     </View>
 
     <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>nello spirito in</Text>
-            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View> }
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>sieme</Text>
     </View>
 
@@ -25,7 +25,7 @@ export default function SiamoQuiPerAdorarti ({ a, b, c, d, e, f, g, cDiesis, eBe
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}> </Text>
                       {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{f}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Eleviam le nostre m</Text>
-                      {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}/{a}-</Text></View> }
+                      {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c} {a}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ani</Text>
     </View>
 
@@ -43,7 +43,7 @@ export default function SiamoQuiPerAdorarti ({ a, b, c, d, e, f, g, cDiesis, eBe
 
     <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Il perdono Tu ci hai d</Text>
-            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}-/{a}</Text></View> }
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}- {a}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ato</Text>
     </View>
 
@@ -57,7 +57,7 @@ export default function SiamoQuiPerAdorarti ({ a, b, c, d, e, f, g, cDiesis, eBe
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}> </Text>
                       {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{f}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Le hai gettate in fondo al </Text>
-                      {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}/{a}</Text></View> }
+                      {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c} {a}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>mare,</Text>
     </View>
 

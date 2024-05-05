@@ -29,7 +29,7 @@ export default function VoitTuttiCheSieteAssetati ({ a, b, c, d, e, f, g, cDiesi
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>venite e l’avr</Text>
-            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}- {d}</Text></View>  }
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}- {d}/{fDiesis}</Text></View>  }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ete;</Text>
         </View>
 
@@ -53,7 +53,7 @@ export default function VoitTuttiCheSieteAssetati ({ a, b, c, d, e, f, g, cDiesi
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Perché il giud</Text>
-            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}-</Text></View>  }
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}-/{e}</Text></View>  }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>izio è su di </Text>
             {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}</Text></View>  }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>voi</Text>

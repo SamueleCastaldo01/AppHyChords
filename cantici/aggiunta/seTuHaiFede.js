@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { globalStyles } from '../../styles/global';
 
-export default function SeTuHaiFede ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fDiesis, aBemolle, bBemolle, accordiStru }) {
+export default function SeTuHaiFede ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fDiesis, aBemolle, bBemolle,gDiesis, accordiStru }) {
     return (
     <>
     <View style={globalStyles.containerCantico}>
@@ -11,7 +11,7 @@ export default function SeTuHaiFede ({ a, b, c, d, e, f, g, cDiesis, eBemolle, f
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>"</Text>Se tu hai f</Text>
                     {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ede come un granel di s</Text>
-                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}</Text></View> }
+                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}/{gDiesis}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>enape</Text>
         </View>
         
@@ -35,9 +35,9 @@ export default function SeTuHaiFede ({ a, b, c, d, e, f, g, cDiesis, eBemolle, f
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>muovi</Text>
-                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}</Text></View> }
+                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}/{gDiesis}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ti, muovi</Text>
-                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}- {a}</Text></View> }
+                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}- {a}/{cDiesis}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ti!</Text>
         </View>
 
@@ -51,9 +51,9 @@ export default function SeTuHaiFede ({ a, b, c, d, e, f, g, cDiesis, eBemolle, f
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>muovi</Text>
-                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}</Text></View> }
+                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}/{gDiesis}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ti, muovi</Text>
-                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}- {a}</Text></View> }
+                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ti!</Text>
         </View>
 
@@ -61,7 +61,7 @@ export default function SeTuHaiFede ({ a, b, c, d, e, f, g, cDiesis, eBemolle, f
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>"</Text>E la montagna si muove</Text>
-            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}</Text></View> }
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}/{gDiesis}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>rà,</Text>
         </View>
 

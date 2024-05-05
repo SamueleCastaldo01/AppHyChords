@@ -11,7 +11,7 @@ export default function QuandoPensoAlTuoAmore ({ a, b, c, d, e, f, g, cDiesis, e
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Q</Text>
                 {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>uando penso al Tuo am</Text>
-                {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View> }
+                {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}/{fDiesis}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ore per me</Text>
         </View>
 
@@ -29,7 +29,7 @@ export default function QuandoPensoAlTuoAmore ({ a, b, c, d, e, f, g, cDiesis, e
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}> Q</Text>
                 {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>uando penso al Tuo </Text>
-                {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View> }
+                {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}/{fDiesis}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>sangue per me</Text>
         </View>
 
@@ -37,7 +37,7 @@ export default function QuandoPensoAlTuoAmore ({ a, b, c, d, e, f, g, cDiesis, e
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}> Io non r</Text>
                 {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>iesco a tratt</Text>
-                {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}</Text></View> }
+                {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>enere</Text>
         </View>
 
@@ -55,7 +55,7 @@ export default function QuandoPensoAlTuoAmore ({ a, b, c, d, e, f, g, cDiesis, e
         <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>Coro: </Text> Des</Text>
             {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}</Text></View> }
         <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>idero ador</Text>
-            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View> }
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}/{fDiesis}</Text></View> }
         <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>arti,</Text>
     </View>
 
@@ -73,7 +73,7 @@ export default function QuandoPensoAlTuoAmore ({ a, b, c, d, e, f, g, cDiesis, e
         <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Desid</Text>
             {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}</Text></View> }
         <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ero onor</Text>
-            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View> }
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}/{fDiesis}</Text></View> }
         <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>arti</Text>
     </View>
 

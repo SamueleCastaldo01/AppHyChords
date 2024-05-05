@@ -13,7 +13,7 @@ export default function ConCuoreGrato ({ a, b, c, d, e, f, g, cDiesis, eBemolle,
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>cuore grato ed </Text>
             {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{a}-</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>umilm</Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{a}-</Text></View>} 
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{a}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ente</Text>
     </View>
 
@@ -61,7 +61,7 @@ export default function ConCuoreGrato ({ a, b, c, d, e, f, g, cDiesis, eBemolle,
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>Coro: "</Text>Spi</Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{a}-/{a}/{d}-</Text></View>} 
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{a}- {a} {d}-</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>rto del Signor, </Text>
             {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{g}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>coprim</Text>

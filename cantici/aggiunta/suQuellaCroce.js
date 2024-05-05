@@ -11,7 +11,7 @@ export default function SuQuellaCroce ({ a, b, c, d, e, f, g, cDiesis, eBemolle,
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>1. </Text>Su quella c</Text>
                         {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>roce, l'Agnello sa</Text>
-                        {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}-</Text></View> }
+                        {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>lì,</Text>
     </View>
 
@@ -35,7 +35,7 @@ export default function SuQuellaCroce ({ a, b, c, d, e, f, g, cDiesis, eBemolle,
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Per quella </Text>
                         {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{f}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>croce il cielo si a</Text>
-                        {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}-</Text></View> }
+                        {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{bBemolle}      {f}/{a}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>prì.</Text>
     </View>
 
@@ -43,9 +43,9 @@ export default function SuQuellaCroce ({ a, b, c, d, e, f, g, cDiesis, eBemolle,
 
     <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>Coro: </Text>C</Text>
-                        {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{eBemolle}</Text></View> }
-            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>redo che gloria ed on</Text>
                         {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}-</Text></View> }
+            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>redo che gloria ed on</Text>
+                        {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{eBemolle}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ore,</Text>
     </View>
 
@@ -73,7 +73,7 @@ export default function SuQuellaCroce ({ a, b, c, d, e, f, g, cDiesis, eBemolle,
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>L'unto di D</Text>
                         {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>io, Ges</Text>
-                        {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}-</Text></View> }
+                        {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}7-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ù</Text>
     </View>
 

@@ -37,6 +37,9 @@ export default function BenedettoSei ({ a, b, c, d, e, f, g, cDiesis, eBemolle, 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>2Parte... </Text></Text>
         </View>
 
+        <View style={globalStyles.SpazioCantico}></View>
+
+
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>Ponte1 </Text></Text>
                {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}</Text></View> }
@@ -68,6 +71,8 @@ export default function BenedettoSei ({ a, b, c, d, e, f, g, cDiesis, eBemolle, 
                {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>rem,</Text>
         </View>
+
+        <View style={globalStyles.SpazioCantico}></View>
 
 
         <View style={globalStyles.righeCantico}>
@@ -102,18 +107,10 @@ export default function BenedettoSei ({ a, b, c, d, e, f, g, cDiesis, eBemolle, 
 
 
         <View style={globalStyles.righeCantico}>
-            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>3Parte... </Text></Text>
-        </View>
-        <View style={globalStyles.righeCantico}>
-            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>4Parte... </Text></Text>
-        </View>
-        <View style={globalStyles.righeCantico}>
-            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>Ponte1... </Text></Text>
+            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>3Parte... 4Parte... Ponte1... Coro... </Text></Text>
         </View>
 
-        <View style={globalStyles.righeCantico}>
-            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>Coro:... </Text></Text>
-        </View>
+        <View style={globalStyles.SpazioCantico}></View>
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>Ponte2 </Text>Se Egli mi darà, se Egli toglierà</Text>

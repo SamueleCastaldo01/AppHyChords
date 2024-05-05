@@ -52,7 +52,7 @@ export default function TuSeiDegno ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fD
         </View>
 
         <View style={globalStyles.righeCantico}>
-            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>Ripetere</Text></Text>
+            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>Ripetere (alzare di mezzo tono)</Text></Text>
         </View>
 
         <View style={globalStyles.SpazioCantico}></View>

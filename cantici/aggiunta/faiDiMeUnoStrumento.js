@@ -16,17 +16,17 @@ export default function FaiDiMeUnoStrumento ({ a, b, c, d, e, f, g, cDiesis, eBe
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>u</Text>
-            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>7</Text></View>  }
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}7+</Text></View>  }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>no strumento di adorazione</Text>
         </View>
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>io </Text>
-            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>7</Text></View>  }
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}7</Text></View>  }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>alzo le m</Text>
             {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{b}-</Text></View>  }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ani a t</Text>
-            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}-/{a}</Text></View>  }
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}- {a}</Text></View>  }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>e;</Text>
         </View>
 

@@ -53,7 +53,7 @@ export default function TuHaiDipintoICieli ({ a, b, c, d, e, f, g, cDiesis, eBem
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>il t</Text>
             {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{eBemolle}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>uo amor, la </Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{c}-</Text></View>} 
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{c}-/{a}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>tua fedel</Text>
             {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{d}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>tà.</Text>
@@ -87,7 +87,7 @@ export default function TuHaiDipintoICieli ({ a, b, c, d, e, f, g, cDiesis, eBem
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>la l</Text>
             {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{g}-</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ode a te</Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{eBemolle}-</Text></View>} 
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{eBemolle}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>, com</Text>
             {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{f}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>e un profumo </Text>
@@ -99,7 +99,7 @@ export default function TuHaiDipintoICieli ({ a, b, c, d, e, f, g, cDiesis, eBem
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ad</Text>
             {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{eBemolle}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>oro te per c</Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{c}/{d}/{g}-</Text></View>} 
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{c}- {d} {g}-</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>hi tu sei!</Text>
         </View>
 

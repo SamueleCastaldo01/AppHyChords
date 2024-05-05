@@ -13,7 +13,7 @@ export default function DavantiAlRe ({ a, b, c, d, e, f, g, cDiesis, eBemolle, f
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>avanti al R</Text>
             {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}</Text></View>  }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>e, </Text>
-            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View>  }
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}> {c}/{d}</Text></View>  }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>c’inchiniamo ins</Text>
             {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{b}-</Text></View>  }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ieme,</Text>
@@ -39,7 +39,7 @@ export default function DavantiAlRe ({ a, b, c, d, e, f, g, cDiesis, eBemolle, f
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>verso di </Text>
             {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}</Text></View>  }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Lui, </Text>
-            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View>  }
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}/{d}</Text></View>  }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>eleviamo insi</Text>
             {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{b}-</Text></View>  }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>eme,</Text>

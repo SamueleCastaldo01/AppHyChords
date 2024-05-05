@@ -43,7 +43,7 @@ export default function DavantiAlTuoTrono ({ a, b, c, d, e, f, g, cDiesis, eBemo
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>e</Text>
-            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}-</Text></View> }
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}> del bene mi far</Text>
             {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>à</Text>
@@ -55,7 +55,7 @@ export default function DavantiAlTuoTrono ({ a, b, c, d, e, f, g, cDiesis, eBemo
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}> per questo che ti c</Text>
             {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>hiedo,</Text>
-            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>   {d}</Text></View> }
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>   {d}/{fDiesis}</Text></View> }
         </View>
 
         <View style={globalStyles.righeCantico}>

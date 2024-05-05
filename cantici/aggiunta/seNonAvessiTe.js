@@ -22,7 +22,7 @@ export default function SeNonAvessiTe ({ a, b, c, d, e, f, g, cDiesis, eBemolle,
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}> oh mio Sig</Text>
                  {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{f}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>nore, dove sa</Text>
-                 {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}/{g}</Text></View> }
+                 {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c} {g}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>rei? </Text>
     </View>
 
@@ -40,7 +40,7 @@ export default function SeNonAvessiTe ({ a, b, c, d, e, f, g, cDiesis, eBemolle,
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}> oh mio Sig</Text>
                  {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{f}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>nore, cosa f</Text>
-                 {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}/{g}</Text></View> }
+                 {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c} {g}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>arei?</Text>
     </View>
 
@@ -58,13 +58,13 @@ export default function SeNonAvessiTe ({ a, b, c, d, e, f, g, cDiesis, eBemolle,
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ebbe i miei p</Text>
                  {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>assi con am</Text>
-                 {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}/{g}</Text></View> }
+                 {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c} {g}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>or?</Text>
     </View>
 
     <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}> Chi trover</Text>
-            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}</Text></View> }
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ebbe nelle prove </Text>
     </View>
 

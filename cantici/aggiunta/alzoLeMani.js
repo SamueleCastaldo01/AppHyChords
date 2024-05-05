@@ -8,6 +8,7 @@ export default function AlzoLeMani ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fD
     <View style={globalStyles.containerCantico}>
 
         <View style={globalStyles.righeCantico}>
+        {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>  {d}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Alzo le m</Text>
             {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{e}-/{a}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ani anche se non ho </Text>
@@ -20,7 +21,7 @@ export default function AlzoLeMani ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fD
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>alzo le </Text>
             {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{e}-/{a}</Text></View>} 
-            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>mani anche se ho 1000 pro</Text>
+            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>mani anche se ho mille pro</Text>
             {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{d}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>blemi</Text>
             {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>7</Text></View>} 
@@ -31,7 +32,7 @@ export default function AlzoLeMani ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fD
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>quando alzo le </Text>
             {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{g}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>mani comincio a sent</Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{a}</Text></View>} 
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{a}/{g}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ir</Text>
         </View>
 
@@ -45,7 +46,7 @@ export default function AlzoLeMani ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fD
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>quando alzo le </Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{g}</Text></View>} 
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{e}-</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>mani comincio a sen</Text>
             {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{a}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>tir</Text>
@@ -53,7 +54,7 @@ export default function AlzoLeMani ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fD
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>il fuo</Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{d}/7</Text></View>} 
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{d} 7</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>co!</Text>
         </View>
 
@@ -63,7 +64,7 @@ export default function AlzoLeMani ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fD
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Quando alzo le m</Text>
             {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{g}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ani il mio peso scomp</Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{a}</Text></View>} 
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{a}/{g}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ar</Text>
         </View>
 

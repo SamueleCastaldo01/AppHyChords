@@ -123,7 +123,7 @@ export default function IoSoCheTuSeiQui ({ a, b, c, d, e, f, g, cDiesis, eBemoll
         <View style={globalStyles.SpazioCantico}></View>
 
         <View style={globalStyles.righeCantico}>
-            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>FINALE: </Text>’Benché i miei o</Text>
+            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>FINALE: </Text>Benché i miei o</Text>
             {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>cchi,</Text>
         </View>
@@ -136,7 +136,7 @@ export default function IoSoCheTuSeiQui ({ a, b, c, d, e, f, g, cDiesis, eBemoll
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ti posso sen</Text>
-              {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g} {e}</Text></View> }
+              {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g} {e}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>tir, io so che tu</Text>
               {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}> sei </Text>

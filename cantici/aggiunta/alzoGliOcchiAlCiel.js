@@ -67,7 +67,7 @@ export default function AlzoGliOcchiAlCiel ({ a, b, c, d, e, f, g, cDiesis, eBem
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Io ti adore</Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{a}-</Text></View>} 
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{c}/{fDiesis}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>rò in Spirto e veri</Text>
             {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{b}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>tà</Text>

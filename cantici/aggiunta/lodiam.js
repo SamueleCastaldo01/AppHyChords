@@ -11,7 +11,7 @@ export default function Lodiam ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fDiesi
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>"</Text>’Lod</Text>
                     {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{f}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>iam per la </Text>
-                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}</Text></View> }
+                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}/{e}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Maestà</Text>
         </View>
 
@@ -27,7 +27,7 @@ export default function Lodiam ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fDiesi
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>lod</Text>
                     {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{bBemolle}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>iam perché ci ha </Text>
-                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{f}</Text></View> }
+                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{f}/{a}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>dato</Text>
         </View>
 
@@ -35,7 +35,7 @@ export default function Lodiam ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fDiesi
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Cristo il R</Text>
                     {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{eBemolle}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>e dei </Text>
-                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}</Text></View> }
+                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}/{e}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>re<Text style={globalStyles.textCanticoColo}>" (Bis)</Text></Text>
         </View>
 
@@ -67,7 +67,7 @@ export default function Lodiam ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fDiesi
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>eò tutto quaggi</Text>
                     {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{eBemolle}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ù, per </Text>
-                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}</Text></View> }
+                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}/{e}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>noi<Text style={globalStyles.textCanticoColo}>"(Bis)</Text></Text>
         </View>
 

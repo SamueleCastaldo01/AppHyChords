@@ -3,10 +3,12 @@ import { useFonts, Newsreader_400Regular, Newsreader_600SemiBold } from "@expo-g
 import { RFValue } from "react-native-responsive-fontsize";
 import { screenWidth } from "./ScreenDimensions";
 
+const exPrimary = "#04457E"
+
 const backGrigio = "#EEEEEE"
 const backElenco = "#EEEEEE"
 const back = "#EFEFEF"
-const primary = "#04457E"
+const primary = "#013241"
 const colorText = "black"
 const backCantico = "#EFEFEF"
 const colorHeader = "#EFEFEF"
@@ -55,22 +57,41 @@ export const globalStyles = StyleSheet.create({
         marginBottom: -5,
         padding: 0,
         },
+    textHome: {
+          fontSize: RFValue(22),
+          fontFamily: "Newsreader_600SemiBold",
+          color: "black",
+          paddingBottom: 10,
+          paddingLeft: 10
+      },
     textCantico: {
         position: "relative",
         marginTop: screenWidth < 500 ? 20 : 27,
-        fontSize: RFValue(16),
+        fontSize: RFValue(14),
         fontFamily: "Newsreader_400Regular",
         color: colorText
     },
+    textCanticoMel: {
+      position: "relative",
+      marginTop: screenWidth < 500 ? 30 : 37,
+      fontSize: RFValue(14),
+      fontFamily: "Newsreader_400Regular",
+      color: colorText
+  },
+    text: {
+      fontSize: RFValue(13.5),
+      fontFamily: "Newsreader_400Regular_Italic",
+      color: "white"
+  },
     textCanticoNo: {
         position: "relative",
         marginTop: 5,
-        fontSize: RFValue(16),
+        fontSize: RFValue(14),
         fontFamily: "Newsreader_400Regular",
         color: colorText
     },
     textCanticoColo: {
-        color: primary,
+        color: exPrimary,
         fontWeight: "bold",
     },
     AccordoCantico: {
@@ -79,23 +100,35 @@ export const globalStyles = StyleSheet.create({
         left: -3,
         fontSize: RFValue(10),
         fontFamily: "Newsreader_600SemiBold",
-        color: primary,
+        color: exPrimary,
         fontWeight: "bold",
     },
+    AccordoCanticoMel: {
+      position: "absolute",
+      top: screenWidth < 500 ? 21 : 21,
+      left: -3,
+      fontSize: RFValue(10),
+      fontFamily: "Newsreader_600SemiBold",
+      color: "green",
+      fontWeight: "bold",
+  },
     SpazioCantico: {
-        marginTop: screenWidth <500 ? 30 : 35,
+        marginTop: screenWidth <500 ? 20 : 25,
     },
     paragraph: {
         marginVertical: 8,
         lineHeight: 20,
     },
       header: {
-        height: 80,
+        backgroundColor: back,
+        flexDirection: "row",
+        height: 90,
         position: "float",
+        paddingLeft: 15,
+        paddingRight: 15,
         borderBottomWidth: 0,
         borderColor: "#d8d8d8",
         paddingTop: 38,
-        backgroundColor: colorHeader
     },  
     titleHeader: {
         textAlign: "center",
@@ -104,7 +137,7 @@ export const globalStyles = StyleSheet.create({
         fontFamily: "Newsreader_600SemiBold",
     },
     headerCantico: {
-        height: 100,
+        height: 95,
         position: "float",
         borderBottomWidth: 0,
         borderColor: "#d8d8d8",
@@ -113,11 +146,16 @@ export const globalStyles = StyleSheet.create({
         backgroundColor: colorHeader,
         paddingLeft: 15,
         paddingRight: 15,
+        elevation: 4,
+        shadowColor: 'rgba(0, 0, 0, 0.3)',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 2,
     },  
     titleCantico: {
         paddingLeft: 15,
         textAlign: "left",
-        color: primary,
+        color: exPrimary,
         fontSize: RFValue(20),
         fontFamily: "Newsreader_600SemiBold",
     },
@@ -198,9 +236,9 @@ export const globalStyles = StyleSheet.create({
         flexDirection: 'row', // Disposizione a riga
         alignItems: 'center', // Allineamento verticale al centro
         paddingHorizontal: 10, // Spazio interno orizzontale
-        borderBottomWidth: 0.2, // Spessore del bordo
+        borderBottomWidth: 1, // Spessore del bordo
         borderColor: '#7F8082', // Colore del bordo
-        backgroundColor: "transparent",
+        backgroundColor: back,
         padding: 20,
         paddingLeft: 10,
         paddingRight:30,

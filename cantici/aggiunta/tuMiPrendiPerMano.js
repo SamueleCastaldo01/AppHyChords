@@ -29,15 +29,15 @@ export default function TuMiPrendiPerMano ({ a, b, c, d, e, f, g, cDiesis, eBemo
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>e</Text>
               {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}> le afflizioni </Text>
-              {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{cDiesis}</Text></View> }
+              {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{cDiesis}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>che turbano il mio c</Text>
-              {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}</Text></View> }
+              {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}    {b}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>uore,</Text>
         </View>
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}> </Text>
-              {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{cDiesis}</Text></View> }
+              {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{cDiesis}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>con il Tuo grande am</Text>
               {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{gDiesis}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>or</Text>
@@ -64,9 +64,34 @@ export default function TuMiPrendiPerMano ({ a, b, c, d, e, f, g, cDiesis, eBemo
 
         <View style={globalStyles.SpazioCantico}></View>
 
+      {accordiStru!="Testo" && 
         <View style={globalStyles.righeCantico}>
             <Text style={globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>2 parte...</Text></Text>
         </View>  
+      }
+
+      {accordiStru =="Testo" && 
+      <>
+        <View style={globalStyles.righeCantico}>
+            <Text style={globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>2.</Text> Quando pentito io Ti confesso oh Dio</Text>
+        </View>  
+        <View style={globalStyles.righeCantico}>
+            <Text style={globalStyles.textCanticoNo}>Tutti i miei errori</Text>
+        </View>  
+        <View style={globalStyles.righeCantico}>
+            <Text style={globalStyles.textCanticoNo}>ed il perdono chiedo A Te, Signore,</Text>
+        </View>  
+        <View style={globalStyles.righeCantico}>
+            <Text style={globalStyles.textCanticoNo}>solo per il Tuo amor</Text>
+        </View> 
+        <View style={globalStyles.righeCantico}>
+            <Text style={globalStyles.textCanticoNo}>Mi perdoni e mi dai forza,</Text>
+        </View> 
+        <View style={globalStyles.righeCantico}>
+            <Text style={globalStyles.textCanticoNo}>per non cadere, più e guardare a Te.</Text>
+        </View> 
+        </>
+      }
 
          <View style={globalStyles.SpazioCantico}></View> 
 

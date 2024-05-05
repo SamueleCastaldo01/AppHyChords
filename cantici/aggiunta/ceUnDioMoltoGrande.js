@@ -25,7 +25,7 @@ export default function CeUnDioMoltoGrande ({ a, b, c, d, e, f, g, cDiesis, eBem
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>"</Text>Io lo so, </Text>
-            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{bBemolle}-</Text></View> }
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{bBemolle}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>io lo so,</Text>
         </View>
         

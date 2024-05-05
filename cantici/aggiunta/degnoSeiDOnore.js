@@ -11,7 +11,7 @@ export default function DegnoSeiDOnore ({ a, b, c, d, e, f, g, cDiesis, eBemolle
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>"</Text>Degno sei d’on</Text>
             {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{c}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ore, ti adori</Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>7</Text></View>} 
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{c}7+</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>amo Gesù</Text>
         </View>
 
@@ -45,7 +45,7 @@ export default function DegnoSeiDOnore ({ a, b, c, d, e, f, g, cDiesis, eBemolle
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Nessun altro è come t</Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{f}/{d}-</Text></View>} 
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{f} {d}-</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>e,</Text>
         </View>
 
@@ -65,7 +65,7 @@ export default function DegnoSeiDOnore ({ a, b, c, d, e, f, g, cDiesis, eBemolle
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Nessun altro è come </Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{f}/{d}-</Text></View>} 
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{f} {d}-</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>te,</Text>
         </View>
 

@@ -1,10 +1,16 @@
-import React, { useRef } from "react";
+import React, { useRef, useCallback } from "react";
 import { StyleSheet, View, Text, TouchableOpacity, TouchableWithoutFeedback, ScrollView, Image, Linking, Button } from "react-native";
+import { RewardedInterstitialAd, RewardedAdEventType, AdEventType, InterstitialAd, TestIds, } from 'react-native-google-mobile-ads';
 import Animated  from "react-native-reanimated";
+import { PinchGestureHandler, State } from 'react-native-gesture-handler';
 import { FadeInLeft } from "react-native-reanimated";
 import * as Animatable from 'react-native-animatable';
+import { StatusBar } from "expo-status-bar";
 import { Shadow } from "react-native-shadow-2";
+import { FontAwesome } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
+import { LinearGradient } from "expo-linear-gradient";
+import YoutubePlayer from "react-native-youtube-iframe";
 import { Audio } from 'expo-av';
 import { shareAsync } from "expo-sharing";
 import * as Print from 'expo-print';
@@ -202,17 +208,80 @@ import AprimiGliOcchi from "../cantici/aggiunta/aprimiGliOcchi";
 import EgliEDegno from "../cantici/aggiunta/egliEDegno";
 import IoSoCheTuSeiQuiSento from "../cantici/aggiunta/ioSoCheTUSeiQuiSento";
 import BenedettoSei from "../cantici/aggiunta/benedettoSei";
+import AlloraLoda from "../cantici/aggiunta/alloraLoda";
+import Guidami from "../cantici/aggiunta/guidami";
+import QuandoAlzoLeMani from "../cantici/aggiunta/quandoAlzoLeMani";
+import IlDioDellImpossibile from "../cantici/aggiunta/IlDioDellImpossibile";
+import TuSeiLaForza from "../cantici/aggiunta/tuSeiLaForza";
+import UnVasoDAlabastro from "../cantici/aggiunta/unVasoDAlabastro";
+import IoMiArrendo from "../cantici/aggiunta/ioMiArrendo";
+import Salmo34 from "../cantici/aggiunta/salmo34";
+import IlGiganteCadrà from "../cantici/aggiunta/ilGIganteCadra";
+import GesuMessia from "../cantici/aggiunta/gesuMessia";
+import OdiUnCelesteSuono from "../cantici/aggiunta/odiUnCelesteSuono";
+import AdoroTe from "../cantici/aggiunta/adoroTe";
+import SoloNonSaro from "../cantici/aggiunta/soloNonSarò";
+import CorredoDaTe from "../cantici/aggiunta/correroDaTe";
+import CorreroDaTe from "../cantici/aggiunta/correroDaTe";
+import DioEFedeleFinoAllaFine from "../cantici/aggiunta/dioEFedeleFinoAllaFine";
+import PiuCheVincitori from "../cantici/aggiunta/piuCheVincitori";
+import LaTuaGloria from "../cantici/aggiunta/laTuaGloria";
+import LaBenedizione from "../cantici/aggiunta/laBenedizione";
+import TuStaiChiamando from "../cantici/aggiunta/tuStaiChiamando";
+import IlPotenteCheSalva from "../cantici/aggiunta/ilPotenteCheSalva";
+import ComeZaccheo from "../cantici/aggiunta/comeZaccheo";
+import LeoneDellaTribuDiGiuda from "../cantici/aggiunta/leoneDellaTribuDiGiuda";
+import ApriICieliSdv from "../cantici/aggiunta/apriICieliSdv";
+import CosiComeSei from "../cantici/aggiunta/cosiComeSei";
+import FaiPiovereSuDiMe from "../cantici/aggiunta/faiPiovereSuDiMe";
+import HoBisognoDiTeAdi from "../cantici/aggiunta/hoBisognoDiTeAdi";
+import GrandeIoSon from "../cantici/aggiunta/grandeIoSon";
+import NoiVeniamoAllaPresenzaDelSignor from "../cantici/aggiunta/noiVeniamoAllaPresenza";
+import UnaNuovaPentecoste from "../cantici/aggiunta/unaNuovaPentecoste";
+import GesuVoglioAdorareTe from "../cantici/aggiunta/gesuVoglioAdorareTe";
+import Ineffabile from "../cantici/aggiunta/ineffabile";
+import QuestoECioCheVoglio from "../cantici/aggiunta/questoECioCheVoglio";
+import GraziePerLaSalvezza from "../cantici/aggiunta/graziePerLaSalvezza";
+import CheMagnificoNome from "../cantici/aggiunta/cheMagnificoNome";
+import TuSeiQui from "../cantici/aggiunta/tuSeiQui";
+import SulleAcque from "../cantici/aggiunta/sulleAcque";
+import PerSempre from "../cantici/aggiunta/perSempre";
+import ValiPiuDiQuelCheHo from "../cantici/aggiunta/valiPiuDiQuelCheHo";
+import QuestaElaGraziaTua from "../cantici/aggiunta/questaELaGraziaTua";
+import QuelloCheDioDiceDiMe from "../cantici/aggiunta/quelloCheDioDiceDiMe";
+import IoLascioTutto from "../cantici/aggiunta/ioLascioTutto";
+import Maesta from "../cantici/aggiunta/maesta";
+import GesuRisolverePuo from "../cantici/aggiunta/gesuRisolverePuo";
+import SoloPerGrazia from "../cantici/aggiunta/soloPerGrazia";
+import IlMioCuor from "../cantici/aggiunta/ilMioCuor";
+import DioLoSa from "../cantici/aggiunta/dioLoSa";
+import IlTuoRegno from "../cantici/aggiunta/ilTuoRegno";
+import NonTemereAbbiFede from "../cantici/aggiunta/nonTemereAbbiFede";
+import DioHaFattoCoseGrandi from "../cantici/aggiunta/dioHaFattoCoseGrandi";
+import GesuHaPresoLaVitaMia from "../cantici/aggiunta/gesuHaPresoLaVitaMia";
+
 
 const colorIconBottom = "#04457E"
 const primary = "#04457E"
 
+const adUnitId = __DEV__ ? TestIds.INTERSTITIAL : 'ca-app-pub-8550341729584646/3475759278';
+
+const interstitial = InterstitialAd.createForAdRequest(adUnitId, {
+  keywords: ['fashion', 'clothing'],
+});
+
 export default function Cantico(props) {
+
+  const [interstitialLoaded, setInterstitialLoaded] = useState(false);
+
     const [isFocused, setIsFocused] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [flagSaveKey, setFlagSaveKey] = useState();
     const [currentValue, setCurrentValue] = useState(props.route.params.keyTona);
     const [title, setTitle] =useState(props.route.params.titolo);
     const [key, setKey] =useState(props.route.params.keyTona);
+    const [idVideo, setIdVideo] =useState(props.route.params.idVideoYt);
+    const [idVideoIta, setIdVideoIta] =useState(props.route.params.idVideoYtIta);
     const [accordiStru, setAccordiStru] = useState("Piano");
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -220,6 +289,7 @@ export default function Cantico(props) {
       setIsDropdownOpen(!isDropdownOpen);
       setIsOpen(false);
       setIsDropdownOpenDown(false);
+      setIsDropdownMenuSound(false)
     };
 
     const [isDropdownOpenDown, setIsDropdownOpenDown] = useState(false);
@@ -227,8 +297,64 @@ export default function Cantico(props) {
       setIsDropdownOpenDown(!isDropdownOpenDown);
       setIsOpen(false);
       setIsDropdownOpen(false);
+      setIsDropdownMenuSound(false)
     };
 
+    const [isDropdownMenuSound, setIsDropdownMenuSound] = useState(false);
+    const toggleDropdownDownMenuSound = () => {
+      setIsDropdownMenuSound(!isDropdownMenuSound);
+      setIsOpen(false);
+      setIsDropdownOpen(false);
+      setIsDropdownOpenDown(false)
+    };
+
+
+//Pubblicità_________________________________________________________
+const loadInterstitial = () => {
+  const unsubscribeLoaded = interstitial.addAdEventListener(
+    AdEventType.LOADED,
+    () => {
+      setInterstitialLoaded(true);
+    }
+  );
+
+  const unsubscribeClosed = interstitial.addAdEventListener(
+    AdEventType.CLOSED,
+    () => {
+      setInterstitialLoaded(false);
+      interstitial.load();
+    }
+  );
+
+  interstitial.load();
+
+  return () => {
+    unsubscribeClosed();
+    unsubscribeLoaded();
+  }
+}
+
+useEffect(() => {
+  const unsubscribeInterstitialEvents = loadInterstitial();
+
+  return () => {
+    unsubscribeInterstitialEvents();
+  };
+}, [])
+
+//Player Youtube___________________________________________________________________________
+    const [playing, setPlaying] = useState(false);
+
+      const onStateChange = useCallback((state) => {
+        if (state === "ended") {
+          setPlaying(false);
+          Alert.alert("video has finished playing!");
+        }
+      }, []);
+    
+      const togglePlaying = useCallback(() => {
+        setPlaying((prev) => !prev);
+      }, []);
 
 //****************************************************************************** */
     const openDropdown = () => {
@@ -241,6 +367,7 @@ export default function Cantico(props) {
         setIsOpen(false);
         setIsDropdownOpen(false);
         setIsDropdownOpenDown(false);
+        setIsDropdownMenuSound(false);
       };
 
     const onFocus = () => {
@@ -1190,6 +1317,8 @@ const handleSaveStateKey = async (value) => {
 //Lettore Audio-----------------------------------------------------------------------------------------------------
 const [sound, setSound] = useState();
 const [playView, setPlayView] = useState(false);
+const [playViewYT, setPlayViewYT] = useState(false);
+const [playViewYTIta, setPlayViewYTIta] = useState(false);
 const [isPlaying, setIsPlaying] = useState(false);
 const [position, setPosition] = useState(0);
 const [duration, setDuration] = useState(0);
@@ -1211,9 +1340,6 @@ const handleStop = async () => {
   }
 };
 
-const handlePlayView = async () => {
-    setPlayView(!playView)
-};
 
 const handleSliderChange = (value) => {
   if (sound) {
@@ -1265,12 +1391,48 @@ const determineAudioFile = (parametroInput) => {
   }
 };
 
-//End Lettore Audio_____________________________________________________________________________________________
+const handlePlayViewYT = async () => {
+  if(interstitialLoaded) {
+    interstitial.show();
+  }
+  setPlayView(false)
+  setPlayViewYTIta(false)
+    setPlayViewYT(!playViewYT)
+    setIsDropdownMenuSound(false)
+};
+
+const handlePlayViewYTIta = async () => {
+  if(interstitialLoaded) {
+    interstitial.show();
+  }
+    setPlayView(false)
+    setPlayViewYT(false)
+    setPlayViewYTIta(!playViewYTIta)
+    setIsDropdownMenuSound(false)
+};
+
+const handleCloseYt = async () => {
+    setPlayView(false)
+    setPlayViewYT(false)
+    setPlayViewYTIta(false)
+    setPlayViewYT(false)
+    setIsDropdownMenuSound(false)
+};
+
+const handlePlayView = async () => {
+  setPlayViewYT(false)
+  setPlayViewYTIta(false)
+  setPlayView(!playView)
+  setIsDropdownMenuSound(false)
+};
+
 
     return (
         <>
       
             <View style={globalStyles.containerStackCantico}>
+
+      
 {/*********************HANDLER********************************************************* */}
             <View style={ globalStyles.headerCantico}>
                 <View style={styles.leftColumn}>
@@ -1297,7 +1459,7 @@ const determineAudioFile = (parametroInput) => {
                     setOpen={openDropdown}
                     containerStyle={{ width: 93, alignItems:"flex-end", marginLeft: 5}}
                     style={{ backgroundColor: 'transparent',
-                    borderColor:  primary,// Cambia il colore del bordo
+                    borderColor:  colorIconBottom,// Cambia il colore del bordo
                         borderWidth: 2, // Cambia la larghezza del bordo
                         borderRadius: 10, // Cambia il raggio del bordo 
                         }} 
@@ -1316,10 +1478,10 @@ const determineAudioFile = (parametroInput) => {
                         borderWidth: 1, // Cambia la larghezza del bordo
                         borderRadius: 10, // Cambia il raggio del bordo 
                         }}
-                    placeholderStyle={{ color: primary }}
-                    labelStyle={{ color: primary }}
+                    placeholderStyle={{ color: colorIconBottom }}
+                    labelStyle={{ color: colorIconBottom }}
                     textStyle= {{ color: "white" }}
-                    arrowIconStyle= {{ tintColor: primary }}
+                    arrowIconStyle= {{ tintColor: colorIconBottom }}
                     onOpen={onFocus} // Chiamato quando il componente è aperto
                     onClose={onBlur} // Chiamato quando il componente è chiuso
                     />
@@ -1435,23 +1597,54 @@ const determineAudioFile = (parametroInput) => {
               </TouchableOpacity>
             </View>
 
-{/*********************BUTTON LETTORE AUDIO********************************************************* */}
-            <View>
-              <TouchableOpacity style={globalStyles.dropdownHeader} onPress={handlePlayView}>
-              <Entypo name="controller-play" size={24} color={colorIconBottom} />
+{/*********************MENU  SUONI********************************************************* */}
+<View>
+              <TouchableOpacity style={globalStyles.dropdownHeader} onPress={toggleDropdownDownMenuSound}>
+              <AntDesign name="sound" size={25} color={colorIconBottom} />
               </TouchableOpacity>
-            </View>
 
+              {isDropdownMenuSound && (
+                <View style={globalStyles.dropdownMenu}>
+                  {/* Contenuto del menu a discesa */}
+                  <TouchableOpacity  onPress={async () => {
+                      handlePlayView()
+                    }}>
+                    <View style={{ flexDirection: "row", height: 30 }}>
+                      <Text style={globalStyles.textMenu}> Base </Text>
+                    </View>
+                  </TouchableOpacity>
+
+                    <View style={{ marginTop: 20 }}></View>
+
+                  <TouchableOpacity onPress={handlePlayViewYT}>
+                    <View style={{ flexDirection: "row", height: 30 }}>
+                      <Text style={globalStyles.textMenu}> Originale </Text>
+                    </View>
+                  </TouchableOpacity>
+
+                  <View style={{ marginTop: 20 }}></View>
+
+                  <TouchableOpacity onPress={handlePlayViewYTIta}>
+                    <View style={{ flexDirection: "row", height: 30 }}>
+                      <Text style={globalStyles.textMenu}> Vers. Ita. </Text>
+                    </View>
+                  </TouchableOpacity>
+
+                </View>
+              )}
+            </View>
 
             </View>
             
  {/*********************CANTICI********************************************************* */}       
     <View style={{flex:1, marginTop: 0, }}>
-        <ScrollView style={{ height: "100%", marginTop : 5}}>
+        <ScrollView  style={{ height: "100%", marginTop : 5}}>
         <View style={{ minHeight: '100%', paddingBottom: 10, }}>
-        <TouchableWithoutFeedback onPress={closeDropdown} >
+        <TouchableWithoutFeedback onPress={() => {closeDropdown()}} >
 
-        <Animated.View entering={FadeInLeft.duration(500).delay(100)} ref={viewToSnapshotRef} style={globalStyles.contCanticoScroll}> 
+        <Animated.View  
+        //entering={FadeInLeft.duration(500).delay(100)}
+         ref={viewToSnapshotRef} style={globalStyles.contCanticoScroll}> 
 
         <Text   style={globalStyles.titleCantico}> {props.route.params.num}. {props.route.params.titolo} </Text>
             {/*   Tutti i cantici       */ }
@@ -2001,19 +2194,243 @@ const determineAudioFile = (parametroInput) => {
             { props.route.params.titolo === "Benedetto sei" &&
             <BenedettoSei accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
             }
-
-
+            { props.route.params.titolo === "Allora loda" &&
+            <AlloraLoda accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Guidami" &&
+            <Guidami accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Quando alzo le mani(zigani)" &&
+            <QuandoAlzoLeMani accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Il Dio dell'impossibile" &&
+            <IlDioDellImpossibile accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Tu sei la forza" &&
+            <TuSeiLaForza accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Un vaso d'alabastro" &&
+            <UnVasoDAlabastro accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Io mi arrendo" &&
+            <IoMiArrendo accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Salmo 34" &&
+            <Salmo34 accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Il gigante cadrà" &&
+            <IlGiganteCadrà accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Gesù Messia" &&
+            <GesuMessia accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Odi un celeste suono" &&
+            <OdiUnCelesteSuono accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Adoro te(cuori verso l'infinito)" &&
+            <AdoroTe accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Solo non sarò" &&
+            <SoloNonSaro accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Correrò da Te" &&
+            <CorreroDaTe accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Dio è fedele fino alla fine" &&
+            <DioEFedeleFinoAllaFine accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Più che vincitori" &&
+            <PiuCheVincitori accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "La tua Gloria (Mirko e Giorgia)" &&
+            <LaTuaGloria accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "La benedizione (Kary Jobe)" &&
+            <LaBenedizione accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Tu stai chiamando" &&
+            <TuStaiChiamando accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Il potente che salva" &&
+            <IlPotenteCheSalva accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Come Zaccheo" &&
+            <ComeZaccheo accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Leone della tribù di Giuda" &&
+            <LeoneDellaTribuDiGiuda accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Apri i cieli - SVD Worship" &&
+            <ApriICieliSdv accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Così come sei" &&
+            <CosiComeSei accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Fai piovere su di me" &&
+            <FaiPiovereSuDiMe accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Ho bisogno di Te (ADI)" &&
+            <HoBisognoDiTeAdi accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Il grand Io Son" &&
+            <GrandeIoSon accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Noi veniamo alla presenza del Signore" &&
+            <NoiVeniamoAllaPresenzaDelSignor accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Una nuova Pentecoste" &&
+            <UnaNuovaPentecoste accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Gesù voglio adorare Te" &&
+            <GesuVoglioAdorareTe accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Ineffabile" &&
+            <Ineffabile accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Questo è ciò che voglio" &&
+            <QuestoECioCheVoglio accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Grazie per la salvezza" &&
+            <GraziePerLaSalvezza accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Che magnifico nome" &&
+            <CheMagnificoNome accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Tu sei qui" &&
+            <TuSeiQui accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Per sempre (Kari Jobe)" &&
+            <PerSempre accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Sulle Acque" &&
+            <SulleAcque accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Vali più di quel che ho" &&
+            <ValiPiuDiQuelCheHo accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Questa è la grazia Tua" &&
+            <QuestaElaGraziaTua accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Quello che Dio dice di me" &&
+            <QuelloCheDioDiceDiMe accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Nessuno è come Te" &&
+            <AdoroTeNessunoEComeTe accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Io lascio tutto" &&
+            <IoLascioTutto accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Maestà" &&
+            <Maesta accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Gesù risolvere può" &&
+            <GesuRisolverePuo accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Solo per grazia" &&
+            <SoloPerGrazia accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Il mio cuor" &&
+            <IlMioCuor accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Dio lo sa" &&
+            <DioLoSa accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Il tuo regno" &&
+            <IlTuoRegno accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Non temere abbi fede in me" &&
+            <NonTemereAbbiFede accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Dio ha fatto cose grandi" &&
+            <DioHaFattoCoseGrandi accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
+            { props.route.params.titolo === "Gesù ha preso la vita mia" &&
+            <GesuHaPresoLaVitaMia accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
             
+            
+
+
 
             </Animated.View>
         </TouchableWithoutFeedback>
         </View>
         {playView && <View style={{ marginTop: 70 }}></View>}
+        {playViewYT && <View style={{ marginTop: 170 }}></View>}
+        {playViewYTIta && <View style={{ marginTop: 170 }}></View>}
         </ScrollView>
     </View>
 
-{/*************************LETTORE AUDIO************************************************************* */}
+{/*************************LETTORE YOUTUBE Original************************************************************* */}
+<Animatable.View
+  animation={playViewYT ? 'slideInUp' : 'slideOutDown'}
+  duration={500}
+  style={{
+    position: 'absolute',
+    bottom: playViewYT ? 1 : -80,
+    paddingRight: 2,
+    elevation:  5,
+    width: '100%',
+    justifyContent: "center",
+    alignItems: "flex-end",
+  }}
+>
+<View style={{ paddingRight: 10 }}>
+{playViewYT &&
+<TouchableOpacity style={{ right: 5 }} onPress={handleCloseYt} >
+<AntDesign name="down" size={24} color={primary} />
+</TouchableOpacity>
+}
+</View>
 
+<View style= {{ width: 300, height: 169,   overflow: "hidden", borderRadius: 12,  }}>
+      <YoutubePlayer
+        height={250}
+        play={playing}
+        style={{ borderRadius: 12 }}
+        videoId={idVideo}
+        onChangeState={onStateChange}
+      />
+</View>
+
+</Animatable.View>
+
+{/*************************LETTORE YOUTUBE Ita************************************************************* */}
+<Animatable.View
+  animation={playViewYTIta ? 'slideInUp' : 'slideOutDown'}
+  duration={500}
+  style={{
+    position: 'absolute',
+    bottom: playViewYTIta ? 1 : -85,
+    paddingRight: 2,
+    elevation:  5,
+    width: '100%',
+    justifyContent: "center",
+    alignItems: "flex-end",
+  }}
+>
+<View style={{ paddingRight: 10 }}>
+{playViewYTIta &&
+<TouchableOpacity style={{ right: 5 }} onPress={handleCloseYt} >
+<AntDesign name="down" size={24} color={primary} />
+</TouchableOpacity>
+}
+</View>
+
+<View style= {{ width: 300, height: 169,   overflow: "hidden", borderRadius: 12,  }}>
+      <YoutubePlayer
+        height={250}
+        play={playing}
+        style={{ borderRadius: 12 }}
+        videoId={idVideoIta}
+        onChangeState={onStateChange}
+      />
+</View>
+
+</Animatable.View>
+
+
+{/******************LETTORE AUDIO**************************** */}
 <Animatable.View
   animation={playView ? 'slideInUp' : 'slideOutDown'}
   duration={300}
@@ -2025,28 +2442,34 @@ const determineAudioFile = (parametroInput) => {
     alignItems: 'center',
   }}
 >
-  <View style={{ backgroundColor: "#282C34", flexDirection: "row", width: "98%", height: 70, justifyContent: "center", alignItems: 'center', borderRadius: 10 }}>
-    <TouchableOpacity style={{ right: 15 }} onPress={handlePlayPause} disabled={!sound}>
-      {!isPlaying ? <Entypo name="controller-play" size={40} color="white" /> :
-        <AntDesign name="pause" size={40} color="white" />
-      }
-    </TouchableOpacity>
-    <Text style={{ color: "white" }}>{`${formatTime(position)}`}</Text>
-    <Slider
-      style={{ width: 200, height: 40 }}
-      minimumValue={0}
-      maximumValue={duration}
-      value={position}
-      onSlidingComplete={(value) => handleSliderChange(value)}
-      disabled={!sound}
-      minimumTrackTintColor="white"
-      maximumTrackTintColor="white"
-      thumbTintColor="white"
-    />
-    <Text style={{ color: "white" }}>{`${formatTime(duration)}`}</Text>
-    <TouchableOpacity onPress={handleStop} disabled={!sound}>
-    </TouchableOpacity>
+
+<View style={{ backgroundColor: "#282C34", flexDirection: "column", width: "98%", height: 70, borderRadius: 10 }}>
+
+<Text style= {{ textAlign: "center", top: 2, color: "white" }}> Key: {key} </Text>
+
+<View style= {{ flexDirection: "row", justifyContent: "center", alignItems: 'center', top:2}}>
+  <TouchableOpacity style={{ right: 15 }} onPress={handlePlayPause} disabled={!sound}>
+    {!isPlaying ? <Entypo name="controller-play" size={40} color="white" /> :
+      <AntDesign name="pause" size={40} color="white" />
+    }
+  </TouchableOpacity>
+  <Text style={{ color: "white" }}>{`${formatTime(position)}`}</Text>
+  <Slider
+    style={{ width: 200, height: 40 }}
+    minimumValue={0}
+    maximumValue={duration}
+    value={position}
+    onSlidingComplete={(value) => handleSliderChange(value)}
+    disabled={!sound}
+    minimumTrackTintColor="white"
+    maximumTrackTintColor="white"
+    thumbTintColor="white"
+  />
+  <Text style={{ color: "white" }}>{`${formatTime(duration)}`}</Text>
+  <TouchableOpacity onPress={handleStop} disabled={!sound}>
+  </TouchableOpacity>
   </View>
+</View>
 </Animatable.View>
 
 

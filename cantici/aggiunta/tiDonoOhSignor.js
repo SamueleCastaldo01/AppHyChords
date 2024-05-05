@@ -45,7 +45,7 @@ export default function TiDonoSignor ({ a, b, c, d, e, f, g, cDiesis, eBemolle, 
 
     <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>Coro: "</Text>Perché sei de</Text>
-                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}-/{d}-</Text></View> }
+                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}- {d}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>gno di ess</Text>
                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ere lod</Text>
@@ -55,7 +55,7 @@ export default function TiDonoSignor ({ a, b, c, d, e, f, g, cDiesis, eBemolle, 
 
     <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Tu sei </Text>
-                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}-/{d}-</Text></View> }
+                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}- {d}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>degno, di es</Text>
                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>sere ador</Text>
@@ -67,13 +67,13 @@ export default function TiDonoSignor ({ a, b, c, d, e, f, g, cDiesis, eBemolle, 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Sei </Text>
                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Dio e Salvator, sei R</Text>
-                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}-</Text></View> }
+                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}/{b}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>e, Consolator</Text>
     </View>
 
     <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Tu sei mio P</Text>
-                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{bBemolle}/{c}</Text></View> }
+                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{bBemolle} {c}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>adre, Dio d’A</Text>
                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{f}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>mor<Text style={globalStyles.textCanticoColo}>" (Bis)</Text></Text>

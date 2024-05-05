@@ -57,7 +57,7 @@ export default function UnaGraziaDellEterno ({ a, b, c, d, e, f, g, cDiesis, eBe
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>la sal</Text>
                     {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>vezza dell’Et</Text>
-                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}- {g}</Text></View> }
+                    {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>erno,</Text>
         </View>
 

@@ -71,7 +71,7 @@ export default function EraLi ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fDiesis
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>Coro:</Text>Gesù era </Text>
                {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{cDiesis}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>lì, che soffriva con a</Text>
-               {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{eBemolle}</Text></View> }
+               {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{eBemolle}/{cDiesis}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>more,</Text>
     </View>
 
@@ -87,7 +87,7 @@ export default function EraLi ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fDiesis
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Gesù era </Text>
                {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{cDiesis}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>lì, con lo sguardo verso il c</Text>
-               {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{eBemolle}/{c}</Text></View> }
+               {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{eBemolle} {c}/{e}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ielo:</Text>
     </View>
 

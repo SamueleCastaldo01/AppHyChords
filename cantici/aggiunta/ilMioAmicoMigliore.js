@@ -17,7 +17,7 @@ export default function IlMioAmico ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fD
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Signore della terra e del ci</Text>
-            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}</Text></View> }
+            {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>elo</Text>
         </View>
 
@@ -25,7 +25,7 @@ export default function IlMioAmico ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fD
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>e lodo T</Text>
                 {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>e per il tuo a</Text>
-                {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{g} {d}</Text></View> }
+                {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{b}- {d}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>more esalto </Text>
                 {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}-</Text></View> }
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Te</Text>

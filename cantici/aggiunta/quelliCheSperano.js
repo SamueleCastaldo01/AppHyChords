@@ -11,7 +11,7 @@ export default function QuelliCheSperano ({ a, b, c, d, e, f, g, cDiesis, eBemol
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>"</Text>Quelli che s</Text>
             {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{d}-</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>perano che sperano in Ges</Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{a}</Text></View>} 
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{a}/{cDiesis}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ù,</Text>
         </View>
 
@@ -29,9 +29,9 @@ export default function QuelliCheSperano ({ a, b, c, d, e, f, g, cDiesis, eBemol
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Come le </Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{g}-/{c}</Text></View>} 
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{g}- {c}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>aquile, come le </Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{f}/{d}-</Text></View>} 
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{f} {d}-</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>aquile in v</Text>
             {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{a}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>olo</Text>
@@ -39,9 +39,9 @@ export default function QuelliCheSperano ({ a, b, c, d, e, f, g, cDiesis, eBemol
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>si lever</Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{d}-/{d}</Text></View>} 
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{d}- {d}/{fDiesis}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>an, Come le a</Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{g}-/{c}</Text></View>} 
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{g}- {c}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>quile, come le a</Text>
             {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{f}/{d}-</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>quile</Text>
@@ -67,7 +67,7 @@ export default function QuelliCheSperano ({ a, b, c, d, e, f, g, cDiesis, eBemol
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>e non si affatican</Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{d}-/{d}</Text></View>} 
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{d}- {d}/{fDiesis}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>o,</Text>
         </View>
 

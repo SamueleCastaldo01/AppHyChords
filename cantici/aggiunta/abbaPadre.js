@@ -35,9 +35,9 @@ export default function AbbaPadre ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fDi
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Or vogliam lasc</Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{g}7/{a}</Text></View>} 
-            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>iare tutte le ansie</Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{fDiesis}-/{b}-</Text></View>} 
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{g}7+ {a}/{g}</Text></View>} 
+            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>iare   tutte le ansie</Text>
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{fDiesis}- {b}-</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>tà</Text>
         </View>
 
@@ -49,13 +49,14 @@ export default function AbbaPadre ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fDi
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}> “Abba, </Text>
             {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{d}</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Padre”</Text>
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>7</Text></View>} 
         </View>
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>Il canto dell’am</Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{g}7/{a}</Text></View>} 
-            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ore, grida dentro </Text>
-            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{fDiesis}-/{b}-</Text></View>} 
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{g}7+ {a}/{g}</Text></View>} 
+            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>ore,    grida dentro </Text>
+            {accordiStru != "Testo" && <View><Text style={globalStyles.AccordoCantico}>{fDiesis}- {b}-</Text></View>} 
             <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}>noi</Text>
         </View>
 
