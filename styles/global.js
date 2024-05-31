@@ -105,7 +105,7 @@ export const globalStyles = StyleSheet.create({
     },
     AccordoCanticoMel: {
       position: "absolute",
-      top: screenWidth < 500 ? 21 : 21,
+      top: screenWidth < 500 ? 21 : 25,
       left: -3,
       fontSize: RFValue(10),
       fontFamily: "Newsreader_600SemiBold",

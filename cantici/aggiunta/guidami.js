@@ -134,13 +134,16 @@ export default function Guidami ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fDies
 
         <View style={globalStyles.righeCantico}>
         {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}-</Text></View>  }
-            <Text style={accordiStru!="Testo"? globalStyles.textCanticoMel: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>Coro: </Text>Senza Te non v</Text>
+            <Text style={accordiStru!="Testo"? globalStyles.textCanticoMel: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>Coro: </Text>S</Text>
+            {accordiStru == "Chitarra" &&<View><Text style={globalStyles.AccordoCanticoMel}>3       3     3     3     3 4        5     5</Text></View>  }
+            <Text style={accordiStru!="Testo"? globalStyles.textCanticoMel: globalStyles.textCanticoNo}>enza Te non v</Text>
             {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}-</Text></View>  }
             <Text style={accordiStru!="Testo"? globalStyles.textCanticoMel: globalStyles.textCanticoNo}>oglio star,</Text>
         </View>
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCanticoMel: globalStyles.textCanticoNo}>s</Text>
+            {accordiStru == "Chitarra" &&<View><Text style={globalStyles.AccordoCanticoMel}>2      3    4     4         4   5     4</Text></View>  }
                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View>  }
             <Text style={accordiStru!="Testo"? globalStyles.textCanticoMel: globalStyles.textCanticoNo}>enza te non v</Text>
                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}</Text></View>  }
@@ -151,6 +154,7 @@ export default function Guidami ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fDies
 
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCanticoMel: globalStyles.textCanticoNo}>n</Text>
+            {accordiStru == "Chitarra" &&<View><Text style={globalStyles.AccordoCanticoMel}>3        3        3          2     1   3      3     4      2</Text></View>  }
                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{e}-</Text></View>  }
             <Text style={accordiStru!="Testo"? globalStyles.textCanticoMel: globalStyles.textCanticoNo}>el mio cuor ho bis</Text>
                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{a}-</Text></View>  }
@@ -160,6 +164,7 @@ export default function Guidami ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fDies
         <View style={globalStyles.righeCantico}>
             <Text style={accordiStru!="Testo"? globalStyles.textCanticoMel: globalStyles.textCanticoNo}></Text>
                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{d}</Text></View>  }
+                  {accordiStru == "Chitarra" &&<View><Text style={globalStyles.AccordoCanticoMel}>   7     1          2        1     7    2         1</Text></View>  }
             <Text style={accordiStru!="Testo"? globalStyles.textCanticoMel: globalStyles.textCanticoNo}>vieni e prendimi per </Text>
                   {accordiStru != "Testo" &&<View><Text style={globalStyles.AccordoCantico}>{c}</Text></View>  }
             <Text style={accordiStru!="Testo"? globalStyles.textCanticoMel: globalStyles.textCanticoNo}>man</Text>
@@ -169,7 +174,7 @@ export default function Guidami ({ a, b, c, d, e, f, g, cDiesis, eBemolle, fDies
         <View style={globalStyles.SpazioCantico}></View>
 
         <View style={globalStyles.righeCantico}>
-            <Text style={accordiStru!="Testo"? globalStyles.textCanticoMel: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>Ripetere a capo (Coro bis)</Text></Text>
+            <Text style={accordiStru!="Testo"? globalStyles.textCantico: globalStyles.textCanticoNo}><Text style={globalStyles.textCanticoColo}>Ripetere a capo (Coro bis)</Text></Text>
         </View>
         </>
       }
