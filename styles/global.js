@@ -190,7 +190,7 @@ export const globalStyles = StyleSheet.create({
       dropdownMenu: {
         position: "absolute",
         alignItems: 'left', 
-        width: 102,
+        width: 103,
         zIndex: 1,
         right: -24,
         borderWidth: 0,
