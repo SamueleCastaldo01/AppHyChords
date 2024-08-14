@@ -259,6 +259,8 @@ import IlTuoRegno from "../cantici/aggiunta/ilTuoRegno";
 import NonTemereAbbiFede from "../cantici/aggiunta/nonTemereAbbiFede";
 import DioHaFattoCoseGrandi from "../cantici/aggiunta/dioHaFattoCoseGrandi";
 import GesuHaPresoLaVitaMia from "../cantici/aggiunta/gesuHaPresoLaVitaMia";
+import StaPregandoPerTe from "../cantici/aggiunta/staPregandoPerTe";
+
 
 
 const colorIconBottom = "#04457E"
@@ -2347,7 +2349,9 @@ const handlePlayView = async () => {
             { props.route.params.titolo === "Gesù ha preso la vita mia" &&
             <GesuHaPresoLaVitaMia accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
             }
-            
+            { props.route.params.titolo === "Sta pregando per te" &&
+            <StaPregandoPerTe accordiStru={accordiStru} c={c} cDiesis={cDiesis} dBemolle={dBemolle} d={d}  dDiesis={dDiesis} eBemolle={eBemolle} e={e} f={f} fDiesis={fDiesis} gBemolle={gBemolle} g={g}  gDiesis={gDiesis} aBemolle={aBemolle} a={a}  aDiesis={aDiesis} bBemolle={bBemolle} b={b}/>
+            }
             
 
 
