@@ -164,6 +164,12 @@ useEffect(() => {
         setIsDropdownOpen(false);
       };
 
+      const changeElettrica = () => {
+        setAccordiStru("Elettrica");
+        setGlobalAccor("Elettrica");
+        setIsDropdownOpen(false);
+      };
+
       const changeBatteria = () => {
         setAccordiStru("Batteria");
         setGlobalAccor("Batteria");
@@ -1264,6 +1270,9 @@ const handlePlayView = async () => {
               {accordiStru === "Chitarra" &&
               <FontAwesome5 name="guitar" size={25} color={colorIconBottom} />
               } 
+              {accordiStru === "Elettrica" &&
+              <Image style={styles.imageBassMenu}  source={require("../images/eletric.png")}/>
+              } 
               {accordiStru === "Basso" &&
               <Image style={styles.imageBassMenu}  source={require("../images/bass-guitar.png")}/>
               } 
@@ -1292,6 +1301,15 @@ const handlePlayView = async () => {
                     <View style={{ flexDirection: "row", height: 30 }}>
                     <FontAwesome5 name="guitar" size={20} color= "white" />
                       <Text style={globalStyles.textMenu}>Chitarra</Text>
+                    </View>
+                  </TouchableOpacity>
+
+                   <View style={{ marginTop: 20 }}></View>
+
+                  <TouchableOpacity onPress={changeElettrica}>
+                    <View style={{ flexDirection: "row", height: 30 }}>
+                    <Image style={globalStyles.imageBass}  source={require("../images/eletric.png")}/>
+                      <Text style={globalStyles.textMenu}>Elettrica</Text>
                     </View>
                   </TouchableOpacity>
 
@@ -1602,6 +1620,13 @@ const styles = StyleSheet.create({
         paddingRight: 10,
       },
       imageBassMenu: {
+        bottom: 4,
+        left: 4,
+        width: 30, // Larghezza dell'immagine PNG
+        height: 30, // Altezza dell'immagine PNG
+        tintColor: colorIconBottom
+      },
+      imageEletricMenu: {
         bottom: 4,
         left: 4,
         width: 30, // Larghezza dell'immagine PNG

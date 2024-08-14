@@ -153,7 +153,7 @@ export const globalStyles = StyleSheet.create({
         shadowRadius: 2,
     },  
     titleCantico: {
-        paddingLeft: 15,
+        paddingLeft: 8,
         textAlign: "left",
         color: exPrimary,
         fontSize: RFValue(20),
