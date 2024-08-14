@@ -190,7 +190,7 @@ export const globalStyles = StyleSheet.create({
       dropdownMenu: {
         position: "absolute",
         alignItems: 'left', 
-        width: 95,
+        width: 102,
         zIndex: 1,
         right: -24,
         borderWidth: 0,
@@ -198,6 +198,7 @@ export const globalStyles = StyleSheet.create({
         top: 55,
         paddingTop: 15,
         paddingLeft:10,
+        paddingRight: 10,
         paddingBottom: 10,
         backgroundColor: "#2F2F2F",
         shadowColor: "#000",
@@ -211,6 +212,7 @@ export const globalStyles = StyleSheet.create({
       },
       textMenu: {
         color: "white",
+        marginLeft: 3,
         fontSize: 16,
         fontFamily: "Newsreader_400Regular"
       },
